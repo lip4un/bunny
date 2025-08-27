@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import OnlineDot from '../UI/OnlineDot';
 import Button from '../UI/Button';
 import StatButton from '../UI/StatButton';
-import BlurredImage from '../UI/BlurredImage';
-import SubscribeCTA from '../Subscription/SubscribeCTA';
+//import BlurredImage from '../UI/blurredImage';
+import SubscripbeCTA from '../Subscription/SubscripbeCTA';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { getPhotosByModel, isSubscribed, subscribeToModel } from '../../utils/api';
@@ -140,7 +140,7 @@ const Profile: React.FC = () => {
       {!subscribed ? (
         <>
           <LockIcon src="/public/115716_lock_unlock_password_secure_security_icon 1.svg" alt="Conteúdo restrito" />
-          <SubscribeCTA onSubscribe={handleSubscribe} />
+          <SubscripbeCTA onSubscribe={handleSubscribe} />
         </>
       ) : (
         <div>
