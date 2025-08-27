@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Feed from '../components/Feed/Feed';
-import Profile from '../components/Profile/Profile';
-import Login from '../components/Auth/Login';
-import Register from '../components/Auth/Register';
-import UploadPhoto from '../components/Upload/UploadPhoto';
-import useAuth from '../hooks/useAuth';
+import Feed from '../components/Feed/Feed.tsx';
+import Profile from '../components/Profile/Profile.tsx';
+import Login from '../components/Auth/Login.tsx';
+import Register from '../components/Auth/Register.tsx';
+import UploadPhoto from '../components/Upload/UploadPhoto.tsx';
+import useAuth from '../hooks/useAuth.ts';
 
 const AppRoutes: React.FC = () => {
   const { user } = useAuth();

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import OnlineDot from '../UI/OnlineDot';
 import Button from '../UI/Button';
 import StatButton from '../UI/StatButton';
-//import BlurredImage from '../UI/blurredImage';
 import SubscripbeCTA from '../Subscription/SubscripbeCTA';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';

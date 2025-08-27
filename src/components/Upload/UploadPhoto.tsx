@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import useAuth from '../../hooks/useAuth';
-import Button from '../UI/Button';
-import { uploadPhoto } from '../../utils/api';
+import useAuth from '../../hooks/useAuth.ts';
+import Button from '../UI/Button.tsx';
+import { uploadPhoto } from '../../utils/api.ts';
 
 const Container = styled.div`
   max-width: 400px;
