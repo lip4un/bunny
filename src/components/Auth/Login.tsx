@@ -1,3 +1,4 @@
+// Login.tsx
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import useAuth from '../../hooks/useAuth';
@@ -42,8 +43,8 @@ const Login: React.FC = () => {
     <Container>
       <h2>Entrar</h2>
       <form onSubmit={handleLogin}>
-        <Input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <Input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <Input type="email" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} required />
+        <Input type="password" placeholder="Senha" value={password} onChange={e => setPassword(e.target.value)} required />
         {err && <div style={{ color: '#e74c3c', marginBottom: 8 }}>{err}</div>}
         <Button bg="#e74c3c" color="#fff" rounded style={{ width: '100%' }}>Entrar</Button>
       </form>

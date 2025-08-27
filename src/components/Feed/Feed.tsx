@@ -25,7 +25,7 @@ const Avatar = styled.div<{ src?: string }>`
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: ${({ src }) => (src ? `url(${src}) center/cover` : '#444')};
+  background: ${({ src }) => src ? `url(${src}) center/cover` : '#444'};
   border: 2px solid #222;
 `;
 
@@ -51,7 +51,7 @@ const Feed: React.FC = () => {
   return (
     <Container>
       <h2 style={{ color: '#fff', marginBottom: 24 }}>Modelos em destaque</h2>
-      {models.map((model) => (
+      {models.map(model => (
         <Link to={`/profile/${model.id}`} key={model.id}>
           <Card>
             <Avatar src={model.avatar} />

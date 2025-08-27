@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import OnlineDot from '../UI/OnlineDot';
 import Button from '../UI/Button';
 import StatButton from '../UI/StatButton';
+import BlurredImage from '../UI/BlurredImage';
 import SubscribeCTA from '../Subscription/SubscribeCTA';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
@@ -31,7 +32,7 @@ const Avatar = styled.div<{ src?: string }>`
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: ${({ src }) => (src ? `url(${src}) center/cover` : '#444')};
+  background: ${({ src }) => src ? `url(${src}) center/cover` : '#444'};
   margin: 0 auto 1em auto;
   border: 3px solid #222;
   box-shadow: 0 2px 12px #0008;
@@ -91,7 +92,7 @@ const Profile: React.FC = () => {
   React.useEffect(() => {
     const users = JSON.parse(localStorage.getItem('bunny_users') || '[]');
     setModel(users.find((u: any) => u.id === id));
-    if (user && id) setSubscribed(isSubscribed(user.id, id));
+    if (user) setSubscribed(isSubscribed(user.id, id!));
   }, [id, user]);
 
   if (!model) return <Container>Carregando...</Container>;
@@ -138,12 +139,13 @@ const Profile: React.FC = () => {
       </Tabs>
       {!subscribed ? (
         <>
-          <LockIcon src="/lock.svg" alt="Conteúdo restrito" />
+          <LockIcon src="/public/115716_lock_unlock_password_secure_security_icon 1.svg" alt="Conteúdo restrito" />
           <SubscribeCTA onSubscribe={handleSubscribe} />
         </>
       ) : (
         <div>
-          {getPhotosByModel(model.id).map((photo) => (
+          {/* Exibe fotos do modelo */}
+          {getPhotosByModel(model.id).map(photo => (
             <img
               key={photo.id}
               src={photo.url}

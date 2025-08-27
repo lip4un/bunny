@@ -40,6 +40,7 @@ const UploadPhoto: React.FC = () => {
   const handleUpload = (e: React.FormEvent) => {
     e.preventDefault();
     if (file && user) {
+      // Simula upload: salva URL local
       const reader = new FileReader();
       reader.onload = () => {
         uploadPhoto(user.id, reader.result as string);

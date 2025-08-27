@@ -1,3 +1,4 @@
+// Register.tsx
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import useAuth from '../../hooks/useAuth';
@@ -44,12 +45,12 @@ const Register: React.FC = () => {
     <Container>
       <h2>Cadastrar</h2>
       <form onSubmit={handleRegister}>
-        <Input type="text" placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} required />
-        <Input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <Input type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <Input type="text" placeholder="Nome" value={name} onChange={e => setName(e.target.value)} required />
+        <Input type="email" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} required />
+        <Input type="password" placeholder="Senha" value={password} onChange={e => setPassword(e.target.value)} required />
         <label style={{ color: '#bbb', marginBottom: 12, display: 'block' }}>
-          <input type="checkbox" checked={isModel} onChange={(e) => setIsModel(e.target.checked)} />{' '}
-          Sou modelo (criador de conteúdo)
+          <input type="checkbox" checked={isModel} onChange={e => setIsModel(e.target.checked)} />
+          {' '}Sou modelo (criador de conteúdo)
         </label>
         {err && <div style={{ color: '#e74c3c', marginBottom: 8 }}>{err}</div>}
         <Button bg="#e74c3c" color="#fff" rounded style={{ width: '100%' }}>Cadastrar</Button>

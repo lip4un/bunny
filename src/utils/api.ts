@@ -1,3 +1,5 @@
+// Simula chamadas de API para fotos e assinaturas
+
 export type Photo = {
   id: string;
   url: string;
